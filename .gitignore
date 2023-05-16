@@ -1,0 +1,15 @@
+/dist
+/node_modules
+
+# Ignore Lerna specific directories
+/.lerna
+/lerna-debug.log
+
+# Ignore generated documentation
+/docs
+
+# Ignore IDE and editor-specific files
+/.vscode
+/.idea
+*.sublime-project
+*.sublime-workspace

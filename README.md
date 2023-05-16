@@ -8,7 +8,6 @@
 
 <h4 align="center">A simple movie database API with CMS</h4>
 
-
 [![Monorepo By - Lerna](https://img.shields.io/badge/Monorepo_By-Lerna-2ea44f?style=for-the-badge&logo=lerna)](https://lerna.js.org)
 [![Frontend - React](https://img.shields.io/badge/Frontend-React-2ea44f?style=for-the-badge&logo=react)](https://react.dev)
 [![Backend - Node JS](https://img.shields.io/badge/Backend-Node_JS-2ea44f?style=for-the-badge&logo=node.js)](https://nodejs.org/en)
@@ -30,7 +29,49 @@
 
 ## Key Features
 
-## How To Use
+---
+
+## How To Use:
+
+### Project Setup and Execution with Lerna
+
+> This project is managed with Lerna, a tool for managing JavaScript projects with multiple packages. Lerna makes it easier to work with a monorepo structure, where multiple packages coexist in the same repository.
+
+Before getting started, make sure you have the following prerequisites installed on your machine:
+
+- Node.js v16.4.1
+- npm or Yarn (package managers)
+
+#### **Setup**
+
+Follow these steps to set up the project:
+
+1. Clone the repository:
+
+   ```shell
+   git clone https://github.com/victor-brown/alkfejl-II-movieDB.git
+   ```
+
+1. Navigate to the project root directory:
+
+   ```shell
+   cd <project-directory>
+   ```
+
+1. Install dependencies and bootstrap the project:
+   ```shell
+   npx lerna bootstrap
+   ```
+
+#### **Running the project**
+
+To run the project, follow these steps:
+
+1. Navigate to the root
+1. Execute lerna (dev)
+   ```shell
+   npm run dev
+   ```
 
 ## Download
 

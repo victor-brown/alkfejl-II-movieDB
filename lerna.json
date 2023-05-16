@@ -1,0 +1,17 @@
+{
+  "$schema": "node_modules/lerna/schemas/lerna-schema.json",
+  "useWorkspaces": true,
+  "packages": ["packages/*"],
+  "version": "fixed",
+  "npmClient": "npm",
+  "command": {
+    "publish": {
+      "ignoreChanges": [
+        "**/*.md",
+        "**/__tests__/**",
+        "packages/*/test/**",
+        "packages/*/dist/**"
+      ]
+    }
+  }
+}

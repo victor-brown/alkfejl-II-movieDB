@@ -1,5 +1,7 @@
-/dist
+*/dist
+*/node_modules
 /node_modules
+/dist
 
 # Ignore Lerna specific directories
 /.lerna

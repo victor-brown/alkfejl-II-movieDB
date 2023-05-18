@@ -20,7 +20,9 @@
     "lint": "lerna run lint",
     "prepare": "husky install",
     "generate-changelog": "npx conventional-changelog -i CHANGELOG.md --same-file",
-    "bump:patch": "npx lerna version 'patch' --exact --conventional-commits"
+    "bump:patch": "npx lerna version 'patch' --exact --conventional-commits",
+    "bump:minor": "npx lerna version 'minor' --exact --conventional-commits",
+    "bump:major": "npx lerna version 'major' --exact --conventional-commits"
   },
   "dependencies": {
     "express": "^4.18.2"

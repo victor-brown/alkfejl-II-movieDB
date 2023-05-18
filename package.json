@@ -19,7 +19,8 @@
     "test": "lerna run test",
     "lint": "lerna run lint",
     "prepare": "husky install",
-    "generate-changelog": "npx conventional-changelog -i CHANGELOG.md --same-file"
+    "generate-changelog": "npx conventional-changelog -i CHANGELOG.md --same-file",
+    "bump:patch": "npx lerna version 'patch' --exact --conventional-commits"
   },
   "dependencies": {
     "express": "^4.18.2"

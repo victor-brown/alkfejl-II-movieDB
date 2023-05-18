@@ -1,0 +1,30 @@
+name: "Dev -- PR Close"
+on:
+  pull_request:
+    branches:
+      - dev
+    types:
+      - closed
+jobs:
+  merge_pr:
+    name: "Check PR Labels"
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: "16.x"
+          cache: "npm"
+
+      - name: "Apply version bump (major)"
+        if: contains(github.event.pull_request.labels.*.name, 'major')
+        run: npm run bump:major
+
+      - name: "Apply version bump (minor)"
+        if: contains(github.event.pull_request.labels.*.name, 'minor')
+        run: npm run bump:minor
+
+      - name: "Apply version bump (patch)"
+        if: contains(github.event.pull_request.labels.*.name, 'patch')
+        run: npm run bump:patch

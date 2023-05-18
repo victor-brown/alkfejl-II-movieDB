@@ -1,0 +1,17 @@
+name: "Dev -- PR Label Checker"
+on:
+  pull_request:
+    branches:
+      - dev
+    types:
+      - reopened
+      - labeled
+      - unlabeled
+jobs:
+  check_labels:
+    name: "Check PR Labels"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: andyantrim/label_checker_actions@v0.1
+        with:
+          labels: "major,minor,patch"

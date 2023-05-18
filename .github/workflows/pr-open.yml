@@ -10,7 +10,9 @@ jobs:
   add_comment:
     name: "Add Comment"
     runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
     steps:
-      - uses: mshick/add-pr-comment@v1
+      - uses: mshick/add-pr-comment@v2
         with:
-          message: Set a versoning laben to the pull request.
+          message: Set a version label to the pull request. (MAJOR, MINOR, PATCH)

@@ -1,6 +1,6 @@
 <h1 align="center">
   <br>
-  <a href=""><img src="https://fastly.picsum.photos/id/932/200/200.jpg?hmac=Qjhen49LkgtGGE52_mEJghx6A2xQoCVv1eTsAVG14-c" alt="" width="200"></a>
+  <a href="#key-features"><img src=".\resources\Blue Cloud Minimal Technology Free Logo.png" alt="" width="200"></a>
   <br>
     Open Movie Database 
   <br>
@@ -24,7 +24,7 @@
 </p>
 
 <div align="center">
-<img src="https://picsum.photos/400"/>
+ <a href="#how-to-use"><img src=".\resources\Movie database design and management.png"/></a>
 </div>
 
 ## Key Features

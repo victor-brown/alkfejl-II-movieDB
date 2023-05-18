@@ -7,7 +7,7 @@ on:
       - closed
 jobs:
   merge_pr:
-    name: "Check PR Labels"
+    name: "Release"
     if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:

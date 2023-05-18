@@ -1,3 +1,16 @@
+# Change Log
+
+All notable changes to this project will be documented in this file.
+See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+# 0.1.0 (2023-05-18)
+
+**Note:** Version bump only for package alkfelj2
+
+
+
+
+
 ## <small>0.0.5 (2023-05-18)</small>
 
 * chore: add test.txt ([b623d05](https://github.com/victor-brown/alkfejl-II-movieDB/commit/b623d05))
@@ -17,8 +30,3 @@
 * feat(linter): update pre-commit ([9207656](https://github.com/victor-brown/alkfejl-II-movieDB/commit/9207656))
 * chor: remove dist ([30abb0e](https://github.com/victor-brown/alkfejl-II-movieDB/commit/30abb0e))
 * v1.0.0 ([2d39c5f](https://github.com/victor-brown/alkfejl-II-movieDB/commit/2d39c5f))
-
-
-
-
-

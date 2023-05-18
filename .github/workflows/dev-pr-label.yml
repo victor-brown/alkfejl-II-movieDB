@@ -1,15 +1,14 @@
-name: " PR Label Checker"
+name: "Dev -- PR Label Checker"
 on:
   pull_request:
     branches:
-      - "**"
-      - "!master"
+      - dev
     types:
       - reopened
       - labeled
       - unlabeled
 jobs:
-  add_comment:
+  check_labels:
     name: "Check PR Labels"
     runs-on: ubuntu-latest
     steps:

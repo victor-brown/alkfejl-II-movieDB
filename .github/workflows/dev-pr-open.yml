@@ -1,9 +1,8 @@
-name: " PR Open"
+name: "Dev PR Open"
 on:
   pull_request:
     branches:
-      - "**"
-      - "!master"
+      - dev
     types:
       - opened
 jobs:
@@ -15,4 +14,4 @@ jobs:
     steps:
       - uses: mshick/add-pr-comment@v2
         with:
-          message: Set a version label to the pull request. (MAJOR, MINOR, PATCH)
+          message: Set a version label to the pull request. (`major`, `minor`, `patch`)

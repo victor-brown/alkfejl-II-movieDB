@@ -15,6 +15,12 @@
 
 [![Made with GH Actions](https://img.shields.io/badge/CI-GitHub_Actions-blue?logo=github-actions&logoColor=white)](https://github.com/features/actions "Go to GitHub Actions homepage")
 [![Made with Docker](https://img.shields.io/badge/Made_with-Docker-blue?logo=docker&logoColor=white)](https://www.docker.com/ "Go to Docker homepage")
+![Love with - TypeScript](https://img.shields.io/badge/Love_with-TypeScript-blue?logo=typescript&logoColor=white)
+![Formatted with - Conventional Commits](https://img.shields.io/badge/Formatted_with-Conventional_Commits-blue?logo=conventionalcommits&logoColor=white)
+![Engine - Express](https://img.shields.io/badge/Engine-Express-blue?logo=express&logoColor=white)
+![Linter - ESlint](https://img.shields.io/badge/Linter-ESlint-blue?logo=eslint&logoColor=white)
+![Build tool - Vite](https://img.shields.io/badge/Build_tool-Vite-blue?logo=vite&logoColor=white)
+![Hooked by - Husky](https://img.shields.io/badge/Hooked_by-Husky-blue)
 
 <p align="center">
   <a href="#key-features">Key Features</a> •
@@ -69,15 +75,58 @@ To run the project, follow these steps:
 
 1. Navigate to the root
 1. Execute lerna (dev)
+
    ```shell
    npm run dev
    ```
 
-## Download
+   ***
+
+### Conventional Commit Messages Guide
+
+> **Introduction:** <br/> Conventional commit messages follow a specific format and provide a consistent way to communicate changes in version control repositories. By using conventional commit messages, you can improve the clarity, traceability, and automation of your software development workflow. This guide will walk you through the key principles and format of conventional commit messages.
+
+#### Format:
+
+A conventional commit message consists of three distinct parts:
+
+`<type>(<scope>): <subject>`
+
+Type: Describes the purpose of the commit. Use one of the following conventional types:
+
+feat: A new feature or enhancement
+fix: A bug fix
+docs: Documentation changes
+style: Code style changes (e.g., formatting, indentation)
+refactor: Code refactoring without affecting its behavior
+test: Adding or modifying tests
+chore: Maintenance tasks, build system changes, etc.
+Scope (optional): Indicates the module, component, or area of the project affected by the commit.
+
+Subject: A brief summary of the change. Use the imperative mood (e.g., "Add," "Update," "Fix") and keep it concise.
+
+Examples:
+Here are a few examples of well-formed conventional commit messages:
+
+```
+feat(user): Add user registration functionality
+fix(auth): Fix authentication token expiration issue
+docs(readme): Update installation instructions
+style(css): Format code according to style guide
+refactor(utils): Refactor utility function for improved performance
+test(api): Add unit tests for API endpoints
+chore(deploy): Update deployment scripts
+```
+
+---
+
+## [Download](https://github.com/victor-brown/alkfejl-II-movieDB/releases)
+
+---
 
 ## License
 
-MIT
+> MIT
 
 ---
 

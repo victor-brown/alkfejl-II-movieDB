@@ -10,6 +10,6 @@
     "resolveJsonModule": true,
     "outDir": "dist"
   },
-  "include": ["src"],
+  "include": ["packages"],
   "exclude": ["node_modules", "dist"]
 }

@@ -17,6 +17,11 @@ jobs:
           node-version: "16.x"
           cache: "npm"
 
+      - name: "Setup gitconfig"
+        run: |
+          git config --global user.name "release job"
+          git config --global user.email "release.job@example.com"
+
       - name: "Apply version bump (major)"
         if: contains(github.event.pull_request.labels.*.name, 'major')
         run: npm run bump:major

@@ -37,4 +37,4 @@ jobs:
         run: npm run bump:patch
 
       - name: "Update root version"
-        run: node ../../release.js
+        run: npm run release

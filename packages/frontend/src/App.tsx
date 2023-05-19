@@ -1,5 +1,12 @@
 import './App.css'
-import { extendTheme, ChakraProvider } from '@chakra-ui/react'
+import { extendTheme, ChakraProvider, IconButton } from '@chakra-ui/react'
+import {
+  Menu,
+  MenuButton,
+  MenuList,
+  MenuItem,
+} from '@chakra-ui/react'
+import { HamburgerIcon } from '@chakra-ui/icons'
 
 
 const colors = {
@@ -18,8 +25,21 @@ function App() {
     <ChakraProvider theme={theme}>    
     <div className='container'>
       <div className='header'>
-      <nav className='menu'>
-      </nav>
+
+      <Menu>
+      <MenuButton
+    as={IconButton}
+    aria-label='Options'
+    icon={<HamburgerIcon />}
+    variant='outline'
+  />
+  <MenuList>
+    <MenuItem onClick={() => alert('Kagebunshin')}>Genres</MenuItem>
+    <MenuItem onClick={() => alert('Kagebunshin')}>Stars</MenuItem>
+    <MenuItem onClick={() => alert('Kagebunshin')}>Movies</MenuItem>
+    <MenuItem onClick={() => alert('Kagebunshrrissn')}>Directors</MenuItem>
+  </MenuList>
+</Menu>
       <h1>Online Movie Database - AlkFejl II</h1>
       </div>
       <div className="container">

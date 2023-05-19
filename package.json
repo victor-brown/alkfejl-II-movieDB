@@ -22,7 +22,8 @@
     "generate-changelog": "npx conventional-changelog -i CHANGELOG.md --same-file",
     "bump:patch": "npx lerna version 'patch' --exact --conventional-commits -y --no-push",
     "bump:minor": "npx lerna version 'minor' --exact --conventional-commits -y --no-push",
-    "bump:major": "npx lerna version 'major' --exact --conventional-commits -y --no-push"
+    "bump:major": "npx lerna version 'major' --exact --conventional-commits -y --no-push",
+    "release": "node ./release.js"
   },
   "dependencies": {
     "express": "^4.18.2"

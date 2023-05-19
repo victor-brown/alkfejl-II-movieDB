@@ -1,36 +1,36 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
-import { ChakraProvider } from '@chakra-ui/react'
+import { extendTheme, ChakraProvider } from '@chakra-ui/react'
+
+
+const colors = {
+  brand: {
+    900: '#1a365d',
+    800: '#153e75',
+    700: '#2a69ac',
+  },
+}
+
+const theme = extendTheme({ colors })
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <ChakraProvider>    
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <ChakraProvider theme={theme}>    
+    <div className='container'>
+      <div className='header'>
+      <nav className='menu'>
+      </nav>
+      <h1>Online Movie Database - AlkFejl II</h1>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
+      <div className="container">
+        Main content goes here.
+      </div>
+      <div className='footer'>
         <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
+        Online Movie Database AlKFejl II
         </p>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    </div>
     </ChakraProvider>    
   )
 }

@@ -14,6 +14,9 @@
     "packages/*"
   ],
   "scripts": {
+    "start-db": "docker-compose start",
+    "stop-db": "docker-compose stop",
+    "predev": "npm run start-db",
     "dev": "lerna run dev",
     "start": "lerna run start",
     "test": "lerna run test",
@@ -23,7 +26,11 @@
     "bump:patch": "npx lerna version 'patch' --exact --conventional-commits -y --no-push",
     "bump:minor": "npx lerna version 'minor' --exact --conventional-commits -y --no-push",
     "bump:major": "npx lerna version 'major' --exact --conventional-commits -y --no-push",
-    "release": "node ./release.js"
+    "release": "node ./release.js",
+    "clean": "npx lerna clean -y",
+    "prebootstrap": "npm run clean",
+    "bootstrap": "npx lerna bootstrap ",
+    "postbootstrap": "docker-compose up --no-start"
   },
   "dependencies": {
     "express": "^4.18.2"

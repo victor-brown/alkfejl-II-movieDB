@@ -14,9 +14,8 @@
       ]
     },
     "version": {
-      "message": "chore: Bump version to %s",
-      "script": "./version.sh",
-      "gitTag": false
+      "message": "chore: bump version to %s",
+      "script": "./version.sh"
     }
   }
 }

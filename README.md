@@ -47,6 +47,7 @@ Before getting started, make sure you have the following prerequisites installed
 
 - Node.js v16.4.1
 - npm or Yarn (package managers)
+- Docker
 
 #### **Setup**
 
@@ -65,9 +66,7 @@ Follow these steps to set up the project:
    ```
 
 1. Install dependencies and bootstrap the project:
-   ```shell
-   npx lerna bootstrap
-   ```
+   `npm run bootstrap`
 
 #### **Running the project**
 
@@ -76,11 +75,18 @@ To run the project, follow these steps:
 1. Navigate to the root
 1. Execute lerna (dev)
 
-   ```shell
-   npm run dev
-   ```
+   `npm run dev`
+
+   > This will start the docker container database
+   >
+   > - To stop the docker container run `npm run stop-db` command
 
    ***
+
+#### **Access the project**
+
+You can open the backend from http://127.0.0.1:5555/
+You can open the frontend from http://127.0.0.1:5173/
 
 ### Conventional Commit Messages Guide
 

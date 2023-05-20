@@ -5,6 +5,7 @@ import morgan from "morgan";
 import config from "./config";
 import { errorHandler } from "./utils/errorHandler";
 import bodyParser from "body-parser";
+import apiKeyRouter from "./routes/apiKey.route";
 
 const app = express();
 const port = config.port;
@@ -21,8 +22,10 @@ app.get("/", (req: Request, res: Response) => {
   res.send("Hello World");
 });
 
+app.use("/apikey", apiKeyRouter);
+
 app.use(errorHandler);
 
 app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
+  console.log(`Server is is listening at http://localhost:${port}`);
 });

@@ -44,7 +44,7 @@ function createError(type: ErrorType, options: ErrorOptions = {}): AppError {
     case "InternalServerError":
       return new InternalServerError(message);
     default:
-      return new InternalServerError("Unknown error");
+      return new InternalServerError("Unknown error!");
   }
 }
 

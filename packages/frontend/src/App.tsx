@@ -1,5 +1,5 @@
 import './App.css'
-import { extendTheme, ChakraProvider, IconButton, Flex } from '@chakra-ui/react'
+import { extendTheme, ChakraProvider, IconButton, TableContainer, Table, Thead, TableCaption, Tr, Th, Tbody, Td } from '@chakra-ui/react'
 import {
   Menu,
   MenuButton,
@@ -43,7 +43,52 @@ function App() {
           <p>Alk Fejl II.</p>
         </div>
         <div className="container">
-          Main content goes here.
+
+        <TableContainer>
+  <Table variant='striped' colorScheme='gray'>
+    <TableCaption>Movies</TableCaption>
+    <Thead>
+      <Tr>
+        <Th>Title</Th>
+        <Th>Star</Th>
+        <Th>Functions</Th>
+      </Tr>
+    </Thead>
+    <Tbody>
+      <Tr>
+        <Td>Matrix</Td>
+        <Td>Kenau Reeves</Td>
+        <Td>edit, delete</Td>
+      </Tr>
+      <Tr>
+        <Td>Matrix</Td>
+        <Td>Kenau Reeves</Td>
+        <Td>edit, delete</Td>
+      </Tr>
+      <Tr>
+        <Td>Matrix</Td>
+        <Td>Kenau Reeves</Td>
+        <Td>edit, delete</Td>
+      </Tr>
+      <Tr>
+        <Td>Matrix</Td>
+        <Td>Kenau Reeves</Td>
+        <Td>edit, delete</Td>
+      </Tr>
+      <Tr>
+        <Td>Matrix</Td>
+        <Td>Kenau Reeves</Td>
+        <Td>edit, delete</Td>
+      </Tr>
+      <Tr>
+        <Td>Matrix</Td>
+        <Td>Kenau Reeves</Td>
+        <Td>edit, delete</Td>
+      </Tr>
+    </Tbody>
+  </Table>
+</TableContainer>
+
         </div>
         <div style={{marginTop: "20px", paddingTop: "20px", borderTop: "1px solid grey"}}>
           <p style={{ textAlign: "center" }}>Online Movie Database - Team S - (SQL, NodeJS, React)</p>

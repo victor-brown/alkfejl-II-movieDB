@@ -23,8 +23,8 @@ function App() {
 
   return (
     <ChakraProvider theme={theme}>
-      <div className='container'>
-        <div className='header' style={{display: "flex", alignItems: "center", gap: "10px", marginBottom: "20px", borderBottom: "1px solid grey"}}>
+      <div>
+        <div className='header' style={{display: "flex", alignItems: "center", gap: "10px", marginBottom: "20px", paddingBottom: "20px", borderBottom: "1px solid grey"}}>
           <Menu>
             <MenuButton
               as={IconButton}
@@ -45,10 +45,10 @@ function App() {
         <div className="container">
           Main content goes here.
         </div>
-        <div className='footer'>
-          <p>
-            Online Movie Database AlKFejl II
-          </p>
+        <div style={{marginTop: "20px", paddingTop: "20px", borderTop: "1px solid grey"}}>
+          <p style={{ textAlign: "center" }}>Online Movie Database - Team S - (SQL, NodeJS, React)</p>
+          <p><a href="https://github.com/victor-brown/alkfejl-II-movieDB/issues">https://github.com/victor-brown/alkfejl-II-movieDB/issues</a></p>
+          <p><a href="https://trello.com/b/uFaGXWy4/open-movie-database">https://trello.com/b/uFaGXWy4/open-movie-database</a></p>
         </div>
       </div>
     </ChakraProvider>

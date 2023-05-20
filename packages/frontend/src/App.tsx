@@ -23,7 +23,7 @@ function App() {
 
   return (
     <ChakraProvider theme={theme}>
-      <div className='container'>
+      <div style={{}}>
         <div className='header' style={{display: "flex", alignItems: "center", gap: "10px", marginBottom: "20px", borderBottom: "1px solid grey"}}>
           <Menu>
             <MenuButton
@@ -45,10 +45,8 @@ function App() {
         <div className="container">
           Main content goes here.
         </div>
-        <div className='footer'>
-          <p>
-            Online Movie Database AlKFejl II
-          </p>
+        <div style={{marginTop: "20px", paddingTop: "20px", borderTop: "1px solid grey"}}>
+          <p style={{ textAlign: "center" }}>Online Movie Database - Team S - (SQL, NodeJS, React)</p>
         </div>
       </div>
     </ChakraProvider>

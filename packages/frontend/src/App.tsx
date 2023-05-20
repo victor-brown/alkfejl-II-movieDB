@@ -24,7 +24,7 @@ function App() {
   return (
     <ChakraProvider theme={theme}>
       <div className='container'>
-        <div className='header' style={{display: "flex", alignItems: "center", gap: "10px"}}>
+        <div className='header' style={{display: "flex", alignItems: "center", gap: "10px", marginBottom: "20px", borderBottom: "1px solid grey"}}>
           <Menu>
             <MenuButton
               as={IconButton}
@@ -39,7 +39,8 @@ function App() {
               <MenuItem onClick={() => alert('Kagebunshrrissn')}>Directors</MenuItem>
             </MenuList>
           </Menu>
-          <h1>Online Movie Database - AlkFejl II</h1>
+          <h1>Online Movie Database</h1>
+          <p>Alk Fejl II.</p>
         </div>
         <div className="container">
           Main content goes here.

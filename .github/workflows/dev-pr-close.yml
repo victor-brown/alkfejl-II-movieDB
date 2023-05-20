@@ -36,5 +36,3 @@ jobs:
         if: contains(github.event.pull_request.labels.*.name, 'patch')
         run: npm run bump:patch
 
-      - name: "Update root version"
-        run: npm run release

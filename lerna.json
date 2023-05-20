@@ -1,9 +1,7 @@
 {
   "$schema": "node_modules/lerna/schemas/lerna-schema.json",
   "useWorkspaces": true,
-  "packages": [
-    "packages/*"
-  ],
+  "packages": ["packages/*"],
   "version": "0.1.0",
   "npmClient": "npm",
   "command": {
@@ -14,6 +12,10 @@
         "packages/*/test/**",
         "packages/*/dist/**"
       ]
+    },
+    "version": {
+      "message": "chore: bump version to %s",
+      "script": "./version.sh"
     }
   }
 }

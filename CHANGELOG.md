@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.1.1 (2023-05-20)
+
+**Note:** Version bump only for package alkfelj2
+
+
+
+
+
 ## 0.1.0 (2023-05-20)
 
 - fix: add gitconfig to workflow ([a094581](https://github.com/victor-brown/alkfejl-II-movieDB/commit/a094581))

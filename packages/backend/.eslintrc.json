@@ -10,12 +10,16 @@
     "project": "./tsconfig.json"
   },
   "plugins": ["@typescript-eslint"],
-  "extends": ["eslint:recommended", "plugin:@typescript-eslint/recommended"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "prettier"
+  ],
   "rules": {
-    "indent": ["error", 2],
     "quotes": ["error", "double"],
     "semi": ["error", "always"],
     "no-console": "off",
-    "@typescript-eslint/explicit-module-boundary-types": "off"
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "arrow-body-style": ["error", "as-needed"]
   }
 }

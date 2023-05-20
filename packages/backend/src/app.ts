@@ -1,11 +1,28 @@
-import express from "express";
-const app = express();
-const port = 5555;
+import express, { Request, Response } from "express";
+import cors from "cors";
+import helmet from "helmet";
+import morgan from "morgan";
+import config from "./config";
+import { errorHandler } from "./utils/errorHandler";
+import bodyParser from "body-parser";
 
-app.get("/", (req, res) => {
-  res.send("Hello World!");
+const app = express();
+const port = config.port;
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+app.use(cors(config.cors));
+app.use(helmet());
+app.use(morgan(config.morgan));
+app.use(bodyParser.json());
+
+app.get("/", (req: Request, res: Response) => {
+  res.send("Hello World");
 });
 
+app.use(errorHandler);
+
 app.listen(port, () => {
-  return console.log(`Express is listening at http://localhost:${port}`);
+  console.log(`Server is running on port ${port}`);
 });

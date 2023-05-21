@@ -40,15 +40,15 @@ export const ApiKeyModel = {
   validateKey: (api_key: string) =>
     new Promise((resolve, reject) => {
       connection.query(
-        "SELECT * FROM api_keys WHERE api_key = ?",
+        "SELECT * FROM api_keys WHERE api_key = ? LIMIT 1",
         [api_key],
         (error, results) => {
           if (error) {
             reject(error);
           } else if (results.length === 0) {
-            resolve(null);
+            resolve(false);
           } else {
-            resolve(results[0]);
+            resolve(true);
           }
         }
       );

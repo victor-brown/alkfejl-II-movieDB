@@ -1,6 +1,7 @@
 import { Router } from "express";
 import { genresRepository } from "../repositories/genres.repository";
 import { createError } from "../factories/errorFactory";
+import { ApiKeyModel } from "../models/apiKey.model";
 
 const router = Router();
 
@@ -31,6 +32,11 @@ router.get("/:genre_id", async (req, res, next) => {
 
 router.post("/create", async (req, res, next) => {
   try {
+    const apiKey = req.query.apiKey;
+
+    if (!apiKey && !(await ApiKeyModel.validateKey(apiKey as string)))
+      throw createError("BadRequestError", { message: "Wrong API key" });
+
     const name = req.query.name as string;
 
     if (!name)
@@ -48,6 +54,11 @@ router.post("/create", async (req, res, next) => {
 
 router.post("/update/:genre_id", async (req, res, next) => {
   try {
+    const apiKey = req.query.apiKey;
+
+    if (!apiKey && !(await ApiKeyModel.validateKey(apiKey as string)))
+      throw createError("BadRequestError", { message: "Wrong API key" });
+
     const id = (req.params.genre_id as string) || "";
     const name = req.query.name as string;
 
@@ -71,6 +82,11 @@ router.post("/update/:genre_id", async (req, res, next) => {
 
 router.delete("/delete/:genre_id", async (req, res, next) => {
   try {
+    const apiKey = req.query.apiKey;
+
+    if (!apiKey && !(await ApiKeyModel.validateKey(apiKey as string)))
+      throw createError("BadRequestError", { message: "Wrong API key" });
+
     const id = (req.params.genre_id as string) || "";
     if (!id)
       throw createError("BadRequestError", {

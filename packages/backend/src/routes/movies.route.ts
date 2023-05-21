@@ -1,6 +1,7 @@
 import { Router } from "express";
 import { moviesRepository } from "../repositories/movies.repository";
 import { createError } from "../factories/errorFactory";
+import { ApiKeyModel } from "../models/apiKey.model";
 
 const router = Router();
 
@@ -47,6 +48,11 @@ router.get("/details/:movie_id", async (req, res, next) => {
 
 router.post("/create", async (req, res, next) => {
   try {
+    const apiKey = req.query.apiKey;
+
+    if (!apiKey && !(await ApiKeyModel.validateKey(apiKey as string)))
+      throw createError("BadRequestError", { message: "Wrong API key" });
+
     const title = req.query.title as string;
     const year = req.query.year as string;
     const imageUrl = req.query.imageUrl as string;
@@ -102,6 +108,11 @@ router.post("/create", async (req, res, next) => {
 
 router.post("/update/:movie_id", async (req, res, next) => {
   try {
+    const apiKey = req.query.apiKey;
+
+    if (!apiKey && !(await ApiKeyModel.validateKey(apiKey as string)))
+      throw createError("BadRequestError", { message: "Wrong API key" });
+
     const id = (req.params.movie_id as string) || "";
     const title = req.query.title as string;
     const year = req.query.year as string;
@@ -164,6 +175,11 @@ router.post("/update/:movie_id", async (req, res, next) => {
 
 router.delete("/delete/:movie_id", async (req, res, next) => {
   try {
+    const apiKey = req.query.apiKey;
+
+    if (!apiKey && !(await ApiKeyModel.validateKey(apiKey as string)))
+      throw createError("BadRequestError", { message: "Wrong API key" });
+
     const id = (req.params.movie_id as string) || "";
     if (!id)
       throw createError("BadRequestError", {

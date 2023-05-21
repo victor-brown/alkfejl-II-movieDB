@@ -1,6 +1,7 @@
 import { Router } from "express";
 import { directorsRepository } from "../repositories/directors.repository";
 import { createError } from "../factories/errorFactory";
+import { ApiKeyModel } from "../models/apiKey.model";
 
 const router = Router();
 
@@ -31,6 +32,11 @@ router.get("/:director_id", async (req, res, next) => {
 
 router.post("/create", async (req, res, next) => {
   try {
+    const apiKey = req.query.apiKey;
+
+    if (!apiKey && !(await ApiKeyModel.validateKey(apiKey as string)))
+      throw createError("BadRequestError", { message: "Wrong API key" });
+
     const name = req.query.name as string;
     const about = req.query.about as string;
 
@@ -53,6 +59,11 @@ router.post("/create", async (req, res, next) => {
 
 router.post("/update/:director_id", async (req, res, next) => {
   try {
+    const apiKey = req.query.apiKey;
+
+    if (!apiKey && !(await ApiKeyModel.validateKey(apiKey as string)))
+      throw createError("BadRequestError", { message: "Wrong API key" });
+
     const id = (req.params.director_id as string) || "";
     const name = req.query.name as string;
     const about = req.query.about as string;
@@ -81,6 +92,11 @@ router.post("/update/:director_id", async (req, res, next) => {
 
 router.delete("/delete/:director_id", async (req, res, next) => {
   try {
+    const apiKey = req.query.apiKey;
+
+    if (!apiKey && !(await ApiKeyModel.validateKey(apiKey as string)))
+      throw createError("BadRequestError", { message: "Wrong API key" });
+
     const id = (req.params.director_id as string) || "";
     if (!id)
       throw createError("BadRequestError", {

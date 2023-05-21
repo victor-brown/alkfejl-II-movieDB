@@ -13,8 +13,6 @@ export const GenresModel = {
       name,
     };
 
-    console.log(genre);
-
     const valuesClause = `('${genre.id}','${genre.name}')`;
 
     const sql = `INSERT INTO genres (id, name) VALUES ${valuesClause}`;

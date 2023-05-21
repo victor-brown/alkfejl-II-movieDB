@@ -15,8 +15,6 @@ export const DirectorsModel = {
       about,
     };
 
-    console.log(director);
-
     const valuesClause = `('${director.id}','${director.name}', '${director.about}')`;
 
     const sql = `INSERT INTO directors (id, name, about) VALUES ${valuesClause}`;

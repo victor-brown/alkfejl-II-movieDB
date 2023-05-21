@@ -7,9 +7,6 @@
 /.lerna
 /lerna-debug.log
 
-# Ignore generated documentation
-/docs
-
 # Ignore IDE and editor-specific files
 /.vscode
 /.idea

@@ -35,6 +35,71 @@
 
 ## Key Features
 
+- Filmek
+  - Create `[POST] 127.0.0.1:5555/movies/create`
+    - apiKey
+    - title
+    - year
+    - imageUrl
+    - certificate
+    - runtime
+    - imdbRating
+    - description
+  - Read `[GET] 127.0.0.1:5555/movies`
+  - Read one `[GET] 127.0.0.1:5555/movies/:id`
+  - Update `[POST] 127.0.0.1:5555/movies/update/:id`
+    - apiKey
+    - title
+    - year
+    - imageUrl
+    - certificate
+    - runtime
+    - imdbRating
+    - description
+  - Delete `[DELETE] 127.0.0.1:5555/:id`
+    - apiKey
+- Film Részletek
+  - Read `[GET] 127.0.0.1:5555/movies/:id`
+- Zsánerek
+  - Create `[POST] 127.0.0.1:5555/genres/create`
+    - apiKey
+    - name
+  - Read `[GET] 127.0.0.1:5555/genres`
+  - Read one `[GET] 127.0.0.1:5555/genres/:id`
+  - Update `[POST] 127.0.0.1:5555/genres/update/:id`
+    - apiKey
+    - name
+  - Delete `[DELETE] 127.0.0.1:5555/genres/:id`
+    - apiKey
+- Színészek
+  - Create `[POST] 127.0.0.1:5555/stars/create`
+    - apiKey
+    - name
+    - about
+  - Read `[GET] 127.0.0.1:5555/stars`
+  - Read One `[GET] 127.0.0.1:5555/stars/:id`
+  - Update `[POST] 127.0.0.1:5555/stars/update/:id`
+    - apiKey
+    - name
+    - about
+  - Delete `[DELETE] 127.0.0.1:5555/stars/delete/:id`
+    - apiKey
+- Rendezők
+  - Create `[POST] 127.0.0.1:5555/directors/create`
+    - apiKey
+    - name
+    - about
+  - Read `[GET] 127.0.0.1:5555/directors`
+  - Read One `[GET] 127.0.0.1:5555/directors/:id`
+  - Update `[POST] 127.0.0.1:5555/directors/update/:id`
+    - apiKey
+    - name
+    - about
+  - Delete `[DELETE] 127.0.0.1:5555/directors/delete/:id`
+    - apiKey
+- Api kulcsok
+  - Read `[GET] 127.0.0.1:5555/apikey`
+
 ---
 
 ## How To Use:

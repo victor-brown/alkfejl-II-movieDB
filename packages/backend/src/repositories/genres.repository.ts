@@ -31,6 +31,16 @@ class GenresRepository {
       });
     }
   }
+  async getGenreById(id: string) {
+    try {
+      const genre = await GenresModel.getById(id);
+      return genre;
+    } catch (error) {
+      return createError("InternalServerError", {
+        message: "Failed to fetch Genre",
+      });
+    }
+  }
 }
 
 export const genresRepository: GenresRepository = new GenresRepository(

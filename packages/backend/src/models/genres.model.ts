@@ -13,6 +13,8 @@ export const GenresModel = {
       name,
     };
 
+    console.log(genre);
+
     const valuesClause = `('${genre.id}','${genre.name}')`;
 
     const sql = `INSERT INTO genres (id, name) VALUES ${valuesClause}`;
@@ -44,4 +46,19 @@ export const GenresModel = {
       });
     });
   },
+
+  getById: (id: string) =>
+    new Promise((resolve, reject) => {
+      connection.query(
+        "SELECT * FROM genres WHERE id = ? LIMIT 1",
+        [id],
+        (error, result) => {
+          if (error) {
+            reject(error);
+          } else {
+            resolve(result.length > 0 ? result[0] : null);
+          }
+        }
+      );
+    }),
 };

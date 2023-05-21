@@ -1,24 +1,60 @@
 import { v4 as uuidv4 } from "uuid";
-import { getNextMonthDate } from "../utils/dateHelper";
+import { getNextMonthDate, toMySqlDate } from "../utils/dateHelper";
+import connection from "../connection";
 
-interface IApiKey {
+export interface ApiKey {
   id: string;
-  api_key: string;
-  valid_until: Date;
+  apiKey: string;
+  validUntil: Date;
 }
 
-export class ApiKey implements IApiKey {
-  id: string;
-  api_key: string;
-  valid_until: Date;
+export const ApiKeyModel = {
+  create: () => {
+    const apiKey: ApiKey = {
+      id: uuidv4(),
+      apiKey: generateRandomKey(),
+      validUntil: getNextMonthDate(new Date()),
+    };
 
-  constructor(api_key: string) {
-    this.id = uuidv4();
-    this.api_key = api_key;
+    const valuesClause = `('${apiKey.id}','${apiKey.apiKey}', '${toMySqlDate(
+      apiKey.validUntil
+    )}')`;
 
-    const currentDate = new Date();
-    const nextMonthDate: Date = getNextMonthDate(currentDate);
+    const sql = `INSERT INTO api_keys (id, api_key, valid_until) VALUES ${valuesClause}`;
 
-    this.valid_until = nextMonthDate;
-  }
+    return new Promise((resolve, reject) => {
+      connection.query(sql, (error) => {
+        if (error) {
+          reject(error);
+        } else {
+          resolve({
+            id: apiKey.id,
+            api_key: apiKey.apiKey,
+            valid_utnil: apiKey.validUntil,
+          });
+        }
+      });
+    });
+  },
+
+  validateKey: (api_key: string) =>
+    new Promise((resolve, reject) => {
+      connection.query(
+        "SELECT * FROM api_keys WHERE api_key = ?",
+        [api_key],
+        (error, results) => {
+          if (error) {
+            reject(error);
+          } else if (results.length === 0) {
+            resolve(null);
+          } else {
+            resolve(results[0]);
+          }
+        }
+      );
+    }),
+};
+
+function generateRandomKey() {
+  return Math.random().toString(36).slice(2, 32).toUpperCase();
 }

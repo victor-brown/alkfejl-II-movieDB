@@ -1,12 +1,11 @@
 import { Router } from "express";
-import { apiKeyService } from "../services/apiKey.service";
+import { apiKeyRepository } from "../repositories/apiKey.repository";
 
 const router = Router();
 
 router.get("/", async (req, res, next) => {
   try {
-    const result = await apiKeyService.getApiKey();
-
+    const result = await apiKeyRepository.createApiKey();
     res.send(result);
   } catch (err) {
     next(err);

@@ -69,4 +69,20 @@ router.post("/update/:genre_id", async (req, res, next) => {
   }
 });
 
+router.delete("/delete/:genre_id", async (req, res, next) => {
+  try {
+    const id = (req.params.genre_id as string) || "";
+    if (!id)
+      throw createError("BadRequestError", {
+        message: "id is a required field!",
+      });
+
+    const result = await genresRepository.deleteById(id);
+
+    res.send(result);
+  } catch (err) {
+    next(err);
+  }
+});
+
 export default router;

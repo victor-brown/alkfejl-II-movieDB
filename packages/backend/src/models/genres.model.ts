@@ -76,4 +76,19 @@ export const GenresModel = {
         }
       );
     }),
+
+  deleteById: (id: string) =>
+    new Promise((resolve, reject) => {
+      connection.query(
+        "DELETE FROM genres WHERE id = ?",
+        [id],
+        (error, result) => {
+          if (error) {
+            reject(error);
+          } else {
+            resolve(result.affectedRows === 1 ? true : false);
+          }
+        }
+      );
+    }),
 };

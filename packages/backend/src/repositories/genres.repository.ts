@@ -53,6 +53,17 @@ class GenresRepository {
       });
     }
   }
+
+  async deleteById(id: string) {
+    try {
+      const genre = await GenresModel.deleteById(id);
+      return genre;
+    } catch (error) {
+      return createError("InternalServerError", {
+        message: "Failed to delete Genre",
+      });
+    }
+  }
 }
 
 export const genresRepository: GenresRepository = new GenresRepository(

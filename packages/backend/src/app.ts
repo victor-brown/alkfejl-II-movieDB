@@ -6,6 +6,7 @@ import config from "./config";
 import { errorHandler } from "./utils/errorHandler";
 import bodyParser from "body-parser";
 import apiKeyRouter from "./routes/apiKey.route";
+import genresRouter from "./routes/genres.route";
 
 const app = express();
 const port = config.port;
@@ -23,6 +24,7 @@ app.get("/", (req: Request, res: Response) => {
 });
 
 app.use("/apikey", apiKeyRouter);
+app.use("/genres", genresRouter);
 
 app.use(errorHandler);
 

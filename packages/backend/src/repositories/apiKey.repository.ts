@@ -1,6 +1,6 @@
 import { Connection } from "mysql";
 import connection from "../connection";
-import { ApiKeyModel } from "../models/apiKey.mode";
+import { ApiKeyModel } from "../models/apiKey.model";
 import { createError } from "../factories/errorFactory";
 
 class ApiKeyRepository {

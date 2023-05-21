@@ -1,37 +1,102 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
-import { ChakraProvider } from '@chakra-ui/react'
+import { extendTheme, ChakraProvider, IconButton, TableContainer, Table, Thead, TableCaption, Tr, Th, Tbody, Td } from '@chakra-ui/react'
+import {
+  Menu,
+  MenuButton,
+  MenuList,
+  MenuItem,
+} from '@chakra-ui/react'
+import { HamburgerIcon } from '@chakra-ui/icons'
+
+
+const colors = {
+  brand: {
+    900: '#1a365d',
+    800: '#153e75',
+    700: '#2a69ac',
+  },
+}
+
+const theme = extendTheme({ colors })
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <ChakraProvider>    
-    <>
+    <ChakraProvider theme={theme}>
       <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+        <div className='header' style={{display: "flex", alignItems: "center", gap: "10px", marginBottom: "20px", paddingBottom: "20px", borderBottom: "1px solid grey"}}>
+          <Menu>
+            <MenuButton
+              as={IconButton}
+              aria-label='Options'
+              icon={<HamburgerIcon />}
+              variant='outline'
+            />
+            <MenuList>
+              <MenuItem onClick={() => alert('Kagebunshin')}>Genres</MenuItem>
+              <MenuItem onClick={() => alert('Kagebunshin')}>Stars</MenuItem>
+              <MenuItem onClick={() => alert('Kagebunshin')}>Movies</MenuItem>
+              <MenuItem onClick={() => alert('Kagebunshrrissn')}>Directors</MenuItem>
+            </MenuList>
+          </Menu>
+          <h1>Online Movie Database</h1>
+          <p>Alk Fejl II.</p>
+        </div>
+        <div className="container">
+
+        <TableContainer>
+  <Table variant='striped' colorScheme='gray'>
+    <TableCaption>Movies</TableCaption>
+    <Thead>
+      <Tr>
+        <Th>Title</Th>
+        <Th>Star</Th>
+        <Th>Functions</Th>
+      </Tr>
+    </Thead>
+    <Tbody>
+      <Tr>
+        <Td>Matrix</Td>
+        <Td>Kenau Reeves</Td>
+        <Td>edit, delete</Td>
+      </Tr>
+      <Tr>
+        <Td>Matrix</Td>
+        <Td>Kenau Reeves</Td>
+        <Td>edit, delete</Td>
+      </Tr>
+      <Tr>
+        <Td>Matrix</Td>
+        <Td>Kenau Reeves</Td>
+        <Td>edit, delete</Td>
+      </Tr>
+      <Tr>
+        <Td>Matrix</Td>
+        <Td>Kenau Reeves</Td>
+        <Td>edit, delete</Td>
+      </Tr>
+      <Tr>
+        <Td>Matrix</Td>
+        <Td>Kenau Reeves</Td>
+        <Td>edit, delete</Td>
+      </Tr>
+      <Tr>
+        <Td>Matrix</Td>
+        <Td>Kenau Reeves</Td>
+        <Td>edit, delete</Td>
+      </Tr>
+    </Tbody>
+  </Table>
+</TableContainer>
+
+        </div>
+        <div style={{marginTop: "20px", paddingTop: "20px", borderTop: "1px solid grey"}}>
+          <p style={{ textAlign: "center" }}>Online Movie Database - Team S - (SQL, NodeJS, React)</p>
+          <p><a href="https://github.com/victor-brown/alkfejl-II-movieDB/issues">https://github.com/victor-brown/alkfejl-II-movieDB/issues</a></p>
+          <p><a href="https://trello.com/b/uFaGXWy4/open-movie-database">https://trello.com/b/uFaGXWy4/open-movie-database</a></p>
+        </div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-    </ChakraProvider>    
+    </ChakraProvider>
   )
 }
 

@@ -31,6 +31,7 @@ class GenresRepository {
       });
     }
   }
+
   async getGenreById(id: string) {
     try {
       const genre = await GenresModel.getById(id);
@@ -38,6 +39,17 @@ class GenresRepository {
     } catch (error) {
       return createError("InternalServerError", {
         message: "Failed to fetch Genre",
+      });
+    }
+  }
+
+  async updateById(id: string, name: string) {
+    try {
+      const genre = await GenresModel.updateById(id, name);
+      return genre;
+    } catch (error) {
+      return createError("InternalServerError", {
+        message: "Failed to update Genre",
       });
     }
   }

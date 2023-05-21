@@ -61,4 +61,19 @@ export const GenresModel = {
         }
       );
     }),
+
+  updateById: (id: string, name: string) =>
+    new Promise((resolve, reject) => {
+      connection.query(
+        "UPDATE genres SET name = ? WHERE id = ?",
+        [name, id],
+        (error, result) => {
+          if (error) {
+            reject(error);
+          } else {
+            resolve(result.affectedRows === 1 ? { id, name } : null);
+          }
+        }
+      );
+    }),
 };

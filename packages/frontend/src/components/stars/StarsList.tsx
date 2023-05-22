@@ -44,36 +44,6 @@ function StarsList() {
                     </Tr>
                 ))}
 
-            <Tr>
-              <Td>Matrix</Td>
-              <Td>Kenau Reeves</Td>
-              <Td>edit, delete</Td>
-            </Tr>
-            <Tr>
-              <Td>Matrix</Td>
-              <Td>Kenau Reeves</Td>
-              <Td>edit, delete</Td>
-            </Tr>
-            <Tr>
-              <Td>Matrix</Td>
-              <Td>Kenau Reeves</Td>
-              <Td>edit, delete</Td>
-            </Tr>
-            <Tr>
-              <Td>Matrix</Td>
-              <Td>Kenau Reeves</Td>
-              <Td>edit, delete</Td>
-            </Tr>
-            <Tr>
-              <Td>Matrix</Td>
-              <Td>Kenau Reeves</Td>
-              <Td>edit, delete</Td>
-            </Tr>
-            <Tr>
-              <Td>Matrix</Td>
-              <Td>Kenau Reeves</Td>
-              <Td>edit, delete</Td>
-            </Tr>
           </Tbody>
         </Table>
       </TableContainer>

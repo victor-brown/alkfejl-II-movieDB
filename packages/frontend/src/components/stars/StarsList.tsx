@@ -15,38 +15,45 @@ function StarsList() {
 
   const API = 'http://127.0.0.1:5555/stars'
   const [list, setList] = useState([])
+  const [people, setPeople] = useState([])
   const [listTotal, setListTotal] = useState<number | undefined>(undefined)
 
   const {
     currentPage,
     setCurrentPage,
+    pageSize,
     pagesCount,
     pages
   } = usePagination({
     total: listTotal,
-    initialState: { currentPage: 1 },
+    initialState: { 
+      currentPage: 1,
+      pageSize: 10,
+      isDisabled: false,
+    },
   })
 
-
-
-  useEffect(() => {
+  useEffect (() => {
     const fetchData = async () => {
       try {
         const response = await axios.get(API)
         setList(response.data)
         setListTotal(response.data.count)
-        console.log(response)
+        console.log(response.data)
       } catch (error) {
         console.log(error)
       }
     }
-
     fetchData()
-  }, []);
+  }, [])
+
+  useEffect (() => {
+    setPeople(list.slice((currentPage - 1) * pageSize, currentPage * pageSize))
+  }, [currentPage, list])
 
   const handlePageChange = (nextPage: number): void => {
-    setCurrentPage(nextPage);
-    console.log("request new data with ->", nextPage);
+    setCurrentPage(nextPage)
+    console.log("request new data with ->", nextPage)
   };
 
   return (
@@ -64,8 +71,8 @@ function StarsList() {
           </Thead>
           <Tbody>
 
-            {list &&
-              list.map(person =>
+            {people &&
+              people.map(person =>
                 <Tr key={person.id}>
                   <Td>{person.id}</Td>
                   <Td>{person.name}</Td>
@@ -85,9 +92,17 @@ function StarsList() {
         pagesCount={pagesCount}
         currentPage={currentPage}
         onPageChange={handlePageChange}
+        isDisabled={false}
       >
-        <PaginationContainer>
-          <PaginationPrevious>Previous</PaginationPrevious>
+        <PaginationContainer
+          align="center"
+          justify="center"
+          p={4}
+        >
+          <PaginationPrevious
+                      isDisabled
+                      onClick={() => console.warn("previous")}
+                      >Previous</PaginationPrevious>
           <PaginationPageGroup>
             {pages.map((page: number) => (
               <PaginationPage

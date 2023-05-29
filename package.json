@@ -37,9 +37,7 @@
     "bump:major": "npx lerna version 'major' --exact --conventional-commits -y "
   },
   "dependencies": {
-    "@ajna/pagination": "^1.4.19",
-    "@chakra-ui/icons": "^2.0.19",
-    "bootstrap": "^5.2.3",
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "@chakra-ui/icons": "^2.0.19"
   }
 }

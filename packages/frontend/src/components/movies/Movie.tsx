@@ -1,35 +1,44 @@
 import { Card } from '@chakra-ui/react'
-import{ useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import axios from 'axios'
 import { useParams } from 'react-router-dom'
 
 
 function Movie() {
 
-  const API = 'http://127.0.0.1:5555/movies/'
-  const [movie, setMovie] = useState([])
-  let param = useParams()
+    const API = 'http://127.0.0.1:5555/movies/'
+    const [movie, setMovie] = useState([])
+    let param = useParams()
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get(API + param.id)
-        setMovie(response.data)
-      } catch (error) {
-        console.log(error)
-      }
-    }
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await axios.get(API + param.id)
+                setMovie(response.data)
+            } catch (error) {
+                console.log(error)
+            }
+        }
 
-    fetchData()
-  }, []);
+        fetchData()
+    }, []);
 
-  return (
-    <Card style={{ marginTop: "20px", gap: "5px", backgroundColor: "lightgrey" }}>
-      <h1>{ movie.title }</h1>
-      <p>Id: { movie.id }</p>
-      <p>Year: { movie.year }</p>
-    </Card>
-  )
+    return (
+        <Card style={{ marginTop: "20px", gap: "5px", backgroundColor: "lightgrey" }}>
+            <h1>{movie.title}</h1>
+            <div style={{ display: "flex", padding: "20px", gap: "5px" }}>
+                <p>Image: <img src={`${movie.image_url}`} /> </p>
+                <div>
+                    <p>Id: {movie.id}</p>
+                    <p>Year: {movie.year}</p>
+                    <p>Description: {movie.description}</p>
+                    <p>IMDB rating: {movie.imdb_rating}</p>
+                    <p>Runtime: {movie.runtime}</p>
+                    <p>Certificate: {movie.certificate}</p>
+                </div>
+            </div>
+        </Card>
+    )
 }
 
 export default Movie

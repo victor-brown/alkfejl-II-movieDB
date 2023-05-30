@@ -25,7 +25,7 @@ const theme = extendTheme({ colors })
 function App() {
 
   return (
-    <ChakraProvider theme={theme}>xxxx
+    <ChakraProvider theme={theme}>
       <div>
         <div className='header' style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "20px", paddingBottom: "20px", borderBottom: "1px solid grey" }}>
           <Menu>

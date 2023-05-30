@@ -1,7 +1,6 @@
 import { TableContainer, Table, Thead, TableCaption, Tr, Th, Tbody, Td } from '@chakra-ui/react'
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import axios from 'axios'
-import { Link } from 'react-router-dom'
 
 
 function StarsList() {
@@ -14,7 +13,6 @@ function StarsList() {
       try {
         const response = await axios.get(API)
         setList(response.data)
-        console.log(response)
       } catch (error) {
         console.log(error)
       }
@@ -38,7 +36,7 @@ function StarsList() {
 
           {list &&
             list.map(({ id, name }) => (
-              <Tr>
+              <Tr key={ id }>
                 <Td>{id}</Td>
                 <Td>{name}</Td>
                 <Td>

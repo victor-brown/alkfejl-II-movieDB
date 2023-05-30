@@ -1,5 +1,5 @@
 import { Card } from '@chakra-ui/react'
-import React, { useEffect, useState } from 'react'
+import{ useEffect, useState } from 'react'
 import axios from 'axios'
 import { useParams } from 'react-router-dom'
 
@@ -15,7 +15,6 @@ function Star() {
       try {
         const response = await axios.get(API + param.id)
         setStar(response.data)
-        console.log(response)
       } catch (error) {
         console.log(error)
       }

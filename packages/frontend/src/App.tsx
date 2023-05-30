@@ -1,5 +1,5 @@
 import './App.css'
-import { extendTheme, ChakraProvider, IconButton, TableContainer, Table, Thead, TableCaption, Tr, Th, Tbody, Td } from '@chakra-ui/react'
+import { extendTheme, ChakraProvider, IconButton } from '@chakra-ui/react'
 import {
   Menu,
   MenuButton,
@@ -7,6 +7,8 @@ import {
   MenuItem,
 } from '@chakra-ui/react'
 import { HamburgerIcon } from '@chakra-ui/icons'
+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
+import StarsList from './components/stars/StarsList'
 
 
 const colors = {
@@ -22,7 +24,7 @@ const theme = extendTheme({ colors })
 function App() {
 
   return (
-    <ChakraProvider theme={theme}>
+    <ChakraProvider theme={theme}>xxxx
       <div>
         <div className='header' style={{display: "flex", alignItems: "center", gap: "10px", marginBottom: "20px", paddingBottom: "20px", borderBottom: "1px solid grey"}}>
           <Menu>
@@ -43,51 +45,13 @@ function App() {
           <p>Alk Fejl II.</p>
         </div>
         <div className="container">
-
-        <TableContainer>
-  <Table variant='striped' colorScheme='gray'>
-    <TableCaption>Movies</TableCaption>
-    <Thead>
-      <Tr>
-        <Th>Title</Th>
-        <Th>Star</Th>
-        <Th>Functions</Th>
-      </Tr>
-    </Thead>
-    <Tbody>
-      <Tr>
-        <Td>Matrix</Td>
-        <Td>Kenau Reeves</Td>
-        <Td>edit, delete</Td>
-      </Tr>
-      <Tr>
-        <Td>Matrix</Td>
-        <Td>Kenau Reeves</Td>
-        <Td>edit, delete</Td>
-      </Tr>
-      <Tr>
-        <Td>Matrix</Td>
-        <Td>Kenau Reeves</Td>
-        <Td>edit, delete</Td>
-      </Tr>
-      <Tr>
-        <Td>Matrix</Td>
-        <Td>Kenau Reeves</Td>
-        <Td>edit, delete</Td>
-      </Tr>
-      <Tr>
-        <Td>Matrix</Td>
-        <Td>Kenau Reeves</Td>
-        <Td>edit, delete</Td>
-      </Tr>
-      <Tr>
-        <Td>Matrix</Td>
-        <Td>Kenau Reeves</Td>
-        <Td>edit, delete</Td>
-      </Tr>
-    </Tbody>
-  </Table>
-</TableContainer>
+          
+        <Router>
+    <Routes>
+        <Route path="/" element={<StarsList />} />
+        <Route path="/stars" element={<StarsList />} />
+        </Routes>
+     </Router>
 
         </div>
         <div style={{marginTop: "20px", paddingTop: "20px", borderTop: "1px solid grey"}}>

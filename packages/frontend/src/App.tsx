@@ -6,7 +6,8 @@ import {
   MenuList,
   MenuItem,
 } from '@chakra-ui/react'
-import { HamburgerIcon } from '@chakra-ui/icons'
+import { HamburgerIcon, StarIcon } from '@chakra-ui/icons'
+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 
 
 const colors = {
@@ -22,7 +23,10 @@ const theme = extendTheme({ colors })
 function App() {
 
   return (
-    <ChakraProvider theme={theme}>
+    <Router>
+    <ChakraProvider theme={theme}>xxxx
+    <Routes>
+      <Route path="/" element={<StarIcon />} />
       <div>
         <div className='header' style={{display: "flex", alignItems: "center", gap: "10px", marginBottom: "20px", paddingBottom: "20px", borderBottom: "1px solid grey"}}>
           <Menu>
@@ -88,7 +92,7 @@ function App() {
     </Tbody>
   </Table>
 </TableContainer>
-
+ 
         </div>
         <div style={{marginTop: "20px", paddingTop: "20px", borderTop: "1px solid grey"}}>
           <p style={{ textAlign: "center" }}>Online Movie Database - Team S - (SQL, NodeJS, React)</p>
@@ -96,7 +100,9 @@ function App() {
           <p><a href="https://trello.com/b/uFaGXWy4/open-movie-database">https://trello.com/b/uFaGXWy4/open-movie-database</a></p>
         </div>
       </div>
+      </Routes>
     </ChakraProvider>
+     </Router>
   )
 }
 

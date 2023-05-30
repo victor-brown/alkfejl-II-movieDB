@@ -1,13 +1,14 @@
 import './App.css'
-import { extendTheme, ChakraProvider, IconButton, TableContainer, Table, Thead, TableCaption, Tr, Th, Tbody, Td } from '@chakra-ui/react'
+import { extendTheme, ChakraProvider, IconButton } from '@chakra-ui/react'
 import {
   Menu,
   MenuButton,
   MenuList,
   MenuItem,
 } from '@chakra-ui/react'
-import { HamburgerIcon, StarIcon } from '@chakra-ui/icons'
+import { HamburgerIcon } from '@chakra-ui/icons'
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
+import StarsList from './components/stars/StarsList'
 
 
 const colors = {
@@ -26,7 +27,6 @@ function App() {
     <Router>
     <ChakraProvider theme={theme}>xxxx
     <Routes>
-      <Route path="/" element={<StarIcon />} />
       <div>
         <div className='header' style={{display: "flex", alignItems: "center", gap: "10px", marginBottom: "20px", paddingBottom: "20px", borderBottom: "1px solid grey"}}>
           <Menu>
@@ -47,52 +47,10 @@ function App() {
           <p>Alk Fejl II.</p>
         </div>
         <div className="container">
+          
+        <Route path="/" element={<StarsList />} />
+        <Route path="/stars" element={<StarsList />} />
 
-        <TableContainer>
-  <Table variant='striped' colorScheme='gray'>
-    <TableCaption>Movies</TableCaption>
-    <Thead>
-      <Tr>
-        <Th>Title</Th>
-        <Th>Star</Th>
-        <Th>Functions</Th>
-      </Tr>
-    </Thead>
-    <Tbody>
-      <Tr>
-        <Td>Matrix</Td>
-        <Td>Kenau Reeves</Td>
-        <Td>edit, delete</Td>
-      </Tr>
-      <Tr>
-        <Td>Matrix</Td>
-        <Td>Kenau Reeves</Td>
-        <Td>edit, delete</Td>
-      </Tr>
-      <Tr>
-        <Td>Matrix</Td>
-        <Td>Kenau Reeves</Td>
-        <Td>edit, delete</Td>
-      </Tr>
-      <Tr>
-        <Td>Matrix</Td>
-        <Td>Kenau Reeves</Td>
-        <Td>edit, delete</Td>
-      </Tr>
-      <Tr>
-        <Td>Matrix</Td>
-        <Td>Kenau Reeves</Td>
-        <Td>edit, delete</Td>
-      </Tr>
-      <Tr>
-        <Td>Matrix</Td>
-        <Td>Kenau Reeves</Td>
-        <Td>edit, delete</Td>
-      </Tr>
-    </Tbody>
-  </Table>
-</TableContainer>
- 
         </div>
         <div style={{marginTop: "20px", paddingTop: "20px", borderTop: "1px solid grey"}}>
           <p style={{ textAlign: "center" }}>Online Movie Database - Team S - (SQL, NodeJS, React)</p>

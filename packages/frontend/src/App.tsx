@@ -7,7 +7,9 @@ import {
   MenuItem,
 } from '@chakra-ui/react'
 import { HamburgerIcon } from '@chakra-ui/icons'
+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import StarsList from './components/stars/StarsList'
+import Star from './components/stars/Star';
 
 
 const colors = {
@@ -25,7 +27,7 @@ function App() {
   return (
     <ChakraProvider theme={theme}>
       <div>
-        <div className='header' style={{display: "flex", alignItems: "center", gap: "10px", marginBottom: "20px", paddingBottom: "20px", borderBottom: "1px solid grey"}}>
+        <div className='header' style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "20px", paddingBottom: "20px", borderBottom: "1px solid grey" }}>
           <Menu>
             <MenuButton
               as={IconButton}
@@ -44,11 +46,17 @@ function App() {
           <p>Alk Fejl II.</p>
         </div>
         <div className="container">
-          
-          <StarsList></StarsList>
+
+          <Router>
+            <Routes>
+              <Route path="/" element={<StarsList />} />
+              <Route path="/stars" element={<StarsList />} />
+              <Route path="/stars/:id" element={<Star />} />
+            </Routes>
+          </Router>
 
         </div>
-        <div style={{marginTop: "20px", paddingTop: "20px", borderTop: "1px solid grey"}}>
+        <div style={{ marginTop: "20px", paddingTop: "20px", borderTop: "1px solid grey" }}>
           <p style={{ textAlign: "center" }}>Online Movie Database - Team S - (SQL, NodeJS, React)</p>
           <p><a href="https://github.com/victor-brown/alkfejl-II-movieDB/issues">https://github.com/victor-brown/alkfejl-II-movieDB/issues</a></p>
           <p><a href="https://trello.com/b/uFaGXWy4/open-movie-database">https://trello.com/b/uFaGXWy4/open-movie-database</a></p>

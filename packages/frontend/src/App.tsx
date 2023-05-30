@@ -24,9 +24,7 @@ const theme = extendTheme({ colors })
 function App() {
 
   return (
-    <Router>
     <ChakraProvider theme={theme}>xxxx
-    <Routes>
       <div>
         <div className='header' style={{display: "flex", alignItems: "center", gap: "10px", marginBottom: "20px", paddingBottom: "20px", borderBottom: "1px solid grey"}}>
           <Menu>
@@ -48,8 +46,12 @@ function App() {
         </div>
         <div className="container">
           
+        <Router>
+    <Routes>
         <Route path="/" element={<StarsList />} />
         <Route path="/stars" element={<StarsList />} />
+        </Routes>
+     </Router>
 
         </div>
         <div style={{marginTop: "20px", paddingTop: "20px", borderTop: "1px solid grey"}}>
@@ -58,9 +60,7 @@ function App() {
           <p><a href="https://trello.com/b/uFaGXWy4/open-movie-database">https://trello.com/b/uFaGXWy4/open-movie-database</a></p>
         </div>
       </div>
-      </Routes>
     </ChakraProvider>
-     </Router>
   )
 }
 

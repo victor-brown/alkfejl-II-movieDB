@@ -10,6 +10,8 @@ import { HamburgerIcon } from '@chakra-ui/icons'
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import StarsList from './components/stars/StarsList'
 import Star from './components/stars/Star';
+import MoviesList from './components/movies/MoviesList';
+import Movie from './components/movies/Movie';
 
 
 const colors = {
@@ -52,6 +54,9 @@ function App() {
               <Route path="/" element={<StarsList />} />
               <Route path="/stars" element={<StarsList />} />
               <Route path="/stars/:id" element={<Star />} />
+
+              <Route path="/movies" element={<MoviesList />} />
+              <Route path="/movies/:id" element={<Movie />} />
             </Routes>
           </Router>
 

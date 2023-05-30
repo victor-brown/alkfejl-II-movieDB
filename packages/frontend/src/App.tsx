@@ -7,6 +7,7 @@ import {
   MenuItem,
 } from '@chakra-ui/react'
 import { HamburgerIcon } from '@chakra-ui/icons'
+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import StarsList from './components/stars/StarsList'
 
 
@@ -23,7 +24,7 @@ const theme = extendTheme({ colors })
 function App() {
 
   return (
-    <ChakraProvider theme={theme}>
+    <ChakraProvider theme={theme}>xxxx
       <div>
         <div className='header' style={{display: "flex", alignItems: "center", gap: "10px", marginBottom: "20px", paddingBottom: "20px", borderBottom: "1px solid grey"}}>
           <Menu>
@@ -45,7 +46,12 @@ function App() {
         </div>
         <div className="container">
           
-          <StarsList></StarsList>
+        <Router>
+    <Routes>
+        <Route path="/" element={<StarsList />} />
+        <Route path="/stars" element={<StarsList />} />
+        </Routes>
+     </Router>
 
         </div>
         <div style={{marginTop: "20px", paddingTop: "20px", borderTop: "1px solid grey"}}>

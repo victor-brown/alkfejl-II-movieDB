@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 import axios from 'axios'
 
 
-function StarsList() {
+function MoviesList() {
 
   const API = 'http://127.0.0.1:5555/movies'
   const [list, setList] = useState([])
@@ -38,4 +38,4 @@ function StarsList() {
   )
 }
 
-export default StarsList
+export default MoviesList

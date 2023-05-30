@@ -27,14 +27,14 @@ function Movie() {
         <Card style={{ marginTop: "20px", gap: "5px", backgroundColor: "lightgrey" }}>
             <h1>{movie.title}</h1>
             <div style={{ display: "flex", padding: "20px", gap: "5px" }}>
-                <p>Image: <img src={`${movie.image_url}`} /> </p>
+                <p><b>Image:</b> <img src={`${movie.image_url}`} /> </p>
                 <div>
-                    <p>Id: {movie.id}</p>
-                    <p>Year: {movie.year}</p>
-                    <p>Description: {movie.description}</p>
-                    <p>IMDB rating: {movie.imdb_rating}</p>
-                    <p>Runtime: {movie.runtime}</p>
-                    <p>Certificate: {movie.certificate}</p>
+                    <p><b>Id:</b> {movie.id}</p>
+                    <p><b>Year:</b> {movie.year}</p>
+                    <p><b>Description:</b> {movie.description}</p>
+                    <p><b>IMDB rating:</b> {movie.imdb_rating}</p>
+                    <p><b>Runtime:</b> {movie.runtime}</p>
+                    <p><b>Certificate:</b> {movie.certificate}</p>
                 </div>
             </div>
         </Card>

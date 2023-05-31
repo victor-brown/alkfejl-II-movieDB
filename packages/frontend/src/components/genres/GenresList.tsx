@@ -28,10 +28,23 @@ function GenresList() {
                 <Thead>
                     <Tr>
                         <Th>Id</Th>
+                        <Th>Name</Th>
                         <Th>Functions</Th>
                     </Tr>
                 </Thead>
                 <Tbody>
+                {list &&
+                        list.map(({ id, name }) => (
+                            <Tr key={id}>
+                                <Td>{id}</Td>
+                                <Td>{name}</Td>
+                                <Td>
+                                    <a href={`/genres/${id}`}>
+                                        view
+                                    </a>
+                                </Td>
+                            </Tr>
+                        ))}
                 </Tbody>
             </Table>
         </TableContainer>

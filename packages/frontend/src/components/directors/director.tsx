@@ -6,7 +6,7 @@ import { useParams } from 'react-router-dom'
 
 function Director() {
 
-    const API = 'http://127.0.0.1:5555/director/'
+    const API = 'http://127.0.0.1:5555/directors/'
     const [director, setDirector] = useState([])
     let param = useParams()
 

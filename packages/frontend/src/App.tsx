@@ -12,6 +12,7 @@ import StarsList from './components/stars/StarsList'
 import Star from './components/stars/Star';
 import MoviesList from './components/movies/MoviesList';
 import Movie from './components/movies/Movie';
+import DirectorsList from './components/directors/DirectorsList';
 
 
 const colors = {
@@ -57,6 +58,9 @@ function App() {
 
               <Route path="/movies" element={<MoviesList />} />
               <Route path="/movies/:id" element={<Movie />} />
+
+              <Route path="/directors" element={<DirectorsList />} />
+              <Route path="/directors/:id" element={<Movie />} />
             </Routes>
           </Router>
 

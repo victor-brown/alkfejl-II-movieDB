@@ -39,6 +39,7 @@ function App() {
               variant='outline'
             />
             <MenuList>
+              
               <MenuItem onClick={() => alert('Kagebunshin')}>Genres</MenuItem>
               <MenuItem onClick={() => alert('Kagebunshin')}>Stars</MenuItem>
               <MenuItem onClick={() => alert('Kagebunshin')}>Movies</MenuItem>

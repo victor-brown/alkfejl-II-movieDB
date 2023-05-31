@@ -38,10 +38,10 @@ function App() {
               variant='outline'
             />
             <MenuList>
-              <MenuItem onClick={() => alert('Kagebunshin')}>Genres</MenuItem>
-              <MenuItem onClick={() => alert('Kagebunshin')}>Stars</MenuItem>
-              <MenuItem onClick={() => alert('Kagebunshin')}>Movies</MenuItem>
-              <MenuItem onClick={() => alert('Kagebunshrrissn')}>Directors</MenuItem>
+              <MenuItem as="a" href='/genres'>Genres</MenuItem>
+              <MenuItem as="a" href='/stars'>Stars</MenuItem>
+              <MenuItem as="a" href='/movies'>Movies</MenuItem>
+              <MenuItem as="a" href='/directors'>Directors</MenuItem>
             </MenuList>
           </Menu>
           <h1>Online Movie Database</h1>

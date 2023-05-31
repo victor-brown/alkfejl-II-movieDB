@@ -14,6 +14,7 @@ import MoviesList from './components/movies/MoviesList';
 import Movie from './components/movies/Movie';
 import DirectorsList from './components/directors/DirectorsList';
 import Director from './components/directors/director';
+import GenresList from './components/genres/GenresList';
 
 
 const colors = {
@@ -62,6 +63,8 @@ function App() {
 
               <Route path="/directors" element={<DirectorsList />} />
               <Route path="/directors/:id" element={<Director />} />
+
+              <Route path="/genres" element={<GenresList />} />
             </Routes>
           </Router>
 

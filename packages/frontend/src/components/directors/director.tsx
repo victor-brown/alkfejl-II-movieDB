@@ -25,7 +25,11 @@ function Director() {
 
     return (
         <Card style={{ marginTop: "20px", gap: "5px", backgroundColor: "lightgrey" }}>
-
+            <h1>{director.name}</h1>
+            <div>
+                <p><b>Id:</b> {director.id}</p>
+                <p><b>About:</b> {director.about}</p>
+            </div>
         </Card>
     )
 }

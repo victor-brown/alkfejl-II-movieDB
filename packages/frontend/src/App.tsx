@@ -13,6 +13,7 @@ import Star from './components/stars/Star';
 import MoviesList from './components/movies/MoviesList';
 import Movie from './components/movies/Movie';
 import DirectorsList from './components/directors/DirectorsList';
+import Director from './components/directors/director';
 
 
 const colors = {
@@ -60,7 +61,7 @@ function App() {
               <Route path="/movies/:id" element={<Movie />} />
 
               <Route path="/directors" element={<DirectorsList />} />
-              <Route path="/directors/:id" element={<Movie />} />
+              <Route path="/directors/:id" element={<Director />} />
             </Routes>
           </Router>
 
